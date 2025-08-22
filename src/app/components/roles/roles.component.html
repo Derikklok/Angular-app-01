@@ -1,0 +1,19 @@
+<p>roles works!</p>
+
+<div class="row">
+    <div class="col-3">{{firstName}}</div>
+    <div class="col-3">{{lastName}}</div>
+    <div class="col-3">{{currentDate}}</div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <input type="text" [value]="firstName" class="form-control" placeholder="Enter first name...">
+    </div>
+    <div class="col-3">
+        <button type="button" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="col-3">
+      <input type="text" [(ngModel)]="firstName" class="form-control" placeholder="Enter something to view changes..">
+    </div>
+</div>
