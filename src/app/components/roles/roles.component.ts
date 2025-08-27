@@ -14,4 +14,12 @@ export class RolesComponent {
   isActive:boolean = false;
   currentDate : Date = new Date();
   inputType:string = "checkbox";
+
+  showAlert(){
+    alert("Alert works");
+  }
+
+  showMessage(message:string){
+    alert(message);
+  }
 }

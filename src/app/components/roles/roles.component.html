@@ -1,4 +1,4 @@
-<p>roles works!</p>
+<p>roles works properly!</p>
 
 <div class="row">
     <div class="col-3">{{firstName}}</div>
@@ -15,5 +15,14 @@
     </div>
     <div class="col-3">
       <input type="text" [(ngModel)]="firstName" class="form-control" placeholder="Enter something to view changes..">
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showAlert()">Show Alert</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-warning" (click)="showMessage('Parametarized message will be here')">Show message</button>
     </div>
 </div>
