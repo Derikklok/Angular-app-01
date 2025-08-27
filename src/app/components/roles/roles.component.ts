@@ -1,25 +1,32 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component , inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { IRole } from '../../model/interface/role';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-roles',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './roles.component.html',
   styleUrl: './roles.component.css',
 })
-export class RolesComponent {
-  firstName: string = 'Sachin Pasindu';
-  lastName = 'Pitigala';
-  age: number = 18;
-  isActive:boolean = false;
-  currentDate : Date = new Date();
-  inputType:string = "checkbox";
-
-  showAlert(){
-    alert("Alert works");
+export class RolesComponent implements OnInit {
+  
+  roleList:IRole [] = [];
+  http = inject(HttpClient);
+  
+  
+  ngOnInit(): void {
+      console.log('roles rendred');
+      this.getAllRoles(); 
   }
-
-  showMessage(message:string){
-    alert(message);
+  
+  
+  getAllRoles(){
+    this.http.get('/api/ClientStrive/GetAllRoles').subscribe((res:any) =>{
+      this.roleList = res.data;
+    });
   }
+  
+  
 }

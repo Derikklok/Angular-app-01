@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MasterComponent {
 
-  currentComponent:string = "";
+  currentComponent:string = "Roles";
 
   changeTab(tabName:string){
     this.currentComponent = tabName;
