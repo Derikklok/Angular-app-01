@@ -1,25 +1,55 @@
-<p>Available Designations</p>
-
-<div class="row">
-  @if (isLoader) {
-    <div class="col-12 text-center">
-      <div class="spinner-border text-warning"></div>
+<div class="designation-container">
+  <div class="container-fluid">
+    <!-- Header -->
+    <div class="page-header">
+      <h2>
+        <i class="fas fa-briefcase me-2"></i>
+        Available Designations
+      </h2>
+      <p class="subtitle">Manage job titles used across employees</p>
     </div>
-  }@else {
-    @for (item of designationList; track $index) {
-      <div class="col-3">
-          <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{item.designation}} </h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Designation ID : {{item.designationId}} </h6>
-                <a href="#" class="card-link">Edit</a>
-                <a href="#" class="card-link">Delete</a>
+
+    <!-- Loader -->
+    @if (isLoader) {
+      <div class="loading text-center">
+        <div class="spinner-border text-success"></div>
+      </div>
+    } @else {
+      <!-- Grid of cards -->
+      <div class="row g-3">
+        @for (item of designationList; track $index) {
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="designation-card">
+              <div class="designation-icon" aria-hidden="true">
+                {{item.designation.charAt(0).toUpperCase()}}
+              </div>
+              <div class="designation-content">
+                <h5 class="title">{{item.designation}}</h5>
+                <div class="meta">ID: <code>{{item.designationId}}</code></div>
+              </div>
+              <div class="designation-actions">
+                <button type="button" class="btn btn-outline-success btn-sm">
+                  <i class="fas fa-edit me-1"></i>
+                  Edit
+                </button>
+                <button type="button" class="btn btn-outline-danger btn-sm">
+                  <i class="fas fa-trash-alt me-1"></i>
+                  Delete
+                </button>
               </div>
             </div>
+          </div>
+        }
       </div>
-  }
-  }
 
-    
+      @if (!designationList.length) {
+        <div class="empty-state">
+          <i class="fas fa-box-open"></i>
+          <h3>No designations found</h3>
+          <p>Add new designations to get started.</p>
+        </div>
+      }
+    }
+  </div>
 </div>
 

@@ -83,8 +83,8 @@
         <nav aria-label="Employee pagination" *ngIf="totalPages > 1">
             <ul class="pagination justify-content-center">
                 <li class="page-item" [class.disabled]="currentPage === 1">
-                    <a class="page-link" href="#" (click)="previousPage(); $event.preventDefault()" aria-label="Previous">
-                        <i class="fas fa-chevron-left"></i>
+                    <a class="page-link prev-next" href="#" (click)="previousPage(); $event.preventDefault()" aria-label="Previous">
+                        &laquo;
                     </a>
                 </li>
                 
@@ -93,8 +93,8 @@
                 </li>
                 
                 <li class="page-item" [class.disabled]="currentPage === totalPages">
-                    <a class="page-link" href="#" (click)="nextPage(); $event.preventDefault()" aria-label="Next">
-                        <i class="fas fa-chevron-right"></i>
+                    <a class="page-link prev-next" href="#" (click)="nextPage(); $event.preventDefault()" aria-label="Next">
+                        &raquo;
                     </a>
                 </li>
             </ul>
