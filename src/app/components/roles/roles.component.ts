@@ -3,7 +3,7 @@ import { Component , inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { APIResponse, IRole } from '../../model/interface/role';
 import { CommonModule } from '@angular/common';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-roles',
