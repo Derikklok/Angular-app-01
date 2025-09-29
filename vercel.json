@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/(.*)",
+        "destination": "https://freeapi.miniprojectideas.com/api/(.*)"
+      }
+    ]
+  }
+  
